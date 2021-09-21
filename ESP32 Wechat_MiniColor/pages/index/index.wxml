@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view style="display:flex;justify-content: center;">
+    <image src="/png/chenyifaer.jpg" ></image>
+  </view>
+
+  <view class="userinfo">
+    <view class="userinfo-avatar">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+      <open-data type="userNickName"></open-data>
+  </view>
+
+  <form class="section" bindsubmit="formSubmit">
+      <view >North217密钥</view>
+      <input password  name="password" placeholder="点击输入密码"/>
+      <view class="btn-area">
+        <button type="default" size="mini" formType="submit">登陆</button>
+      </view>
+  </form>
+
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">Copyright ©2021 Superloyalhh</view>
+    <view class="weui-footer__text">All Rights Reserved</view>
+  </view>
+
+</view>
+
+<toast hidden="{{toastHidden}}">
+    登陆成功
+</toast>
+
+<modal hidden="{{modalHidden}}" no-cancel title="" bindconfirm="resetModal">
+  <view> {{errinfo}} </view>
+</modal>

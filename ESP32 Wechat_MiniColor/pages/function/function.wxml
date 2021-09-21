@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='images'>
+    <block wx:if="{{!isClicked}}">
+        <!--展示-->
+        <view style="display:flex;justify-content: center;">
+            <image src="/png/image.jpg" ></image>
+        </view>
+    </block>
+    <block wx:else>
+      <!--for循环遍历用于存储图片地址和时间的地址-->
+      <view wx:for="{{imgList}}" wx:key="key" bindtap="clickImg" data-index="{{index}}"  >
+        <!--展示图片时间-->
+        <view class="TextContent">
+          <text>{{imgList[index].time}}</text>
+        </view>
+        <!--展示-->
+        <view style="display:flex;justify-content: center;">
+            <image src="{{imgList[index].url}}" ></image>
+        </view>
+      </view>
+    </block>
+  </view>  
+
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+        <open-data type="userNickName"></open-data>
+    </block>
+  </view>
+ 
+  <view class="button-sp-area">
+    <button class="weui-btn" type="primary" size="mini" bindtap="onClickOpen">开灯</button>
+    <button class="weui-btn" type="warn" size="mini" bindtap="onClickOff">关灯</button>
+    <button class="weui-btn" type="default" size="mini" bindtap="onClickShot">拍照</button>
+  </view>
+
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">Copyright ©2021 Superloyalhh</view>
+    <view class="weui-footer__text">All Rights Reserved</view>
+  </view>
+
+</view>
