@@ -4,7 +4,7 @@ Page( {
     toastHidden: true,
     modalHidden:true,
     errinfo:null,
-    PASSWORD:"chenyifaer"
+    PASSWORD:""
   },
   formSubmit: function( e ) {
     var that=this;
